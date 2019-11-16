@@ -1,0 +1,11 @@
+node_modules
+
+
+# ignore chash files
+.cache
+
+# Build directory
+public/
+.DS_Store
+yarn-error.log
+

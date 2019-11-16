@@ -1,0 +1,59 @@
+file: header
+en:
+  menuItems:
+    - label: "Feature"
+      path: "/en#featureSection"
+      offset: "80"
+
+    - label: "Work History"
+      path: "/en#workHistorySection"
+      offset: "100"
+
+    - label: "Portfolio"
+      path: "/en#blogSection"
+      offset: "100"
+
+    - label: "Quality feature"
+      path: "/en#qualitySection"
+      offset: "100"
+
+    - label: "Feedback"
+      path: "/en#feedbackSection"
+      offset: "100"
+
+    - label: "Team Member"
+      path: "/en#teamSection"
+      offset: "67"
+
+    - label: "FAQ"
+      path: "/en#faqSection"
+      offset: "100"
+ar:
+  menuItems:
+    - label: "خدماتنا"
+      path: "/ar#featureSection"
+      offset: "80"
+
+    - label: "تاريخ عملنا"
+      path: "/ar#workHistorySection"
+      offset: "100"
+
+    - label: "محفظة الاعمال"
+      path: "/ar#blogSection"
+      offset: "100"
+
+    - label: "الجودة في العمل"
+      path: "/ar#qualitySection"
+      offset: "100"
+
+    - label: "قالوا عنا"
+      path: "/ar#testimonialSection"
+      offset: "100"
+
+    - label: "أعضاء الفريق"
+      path: "/ar#teamSection"
+      offset: "67"
+
+    - label: "الاسئلة الشائعة"
+      path: "/ar#faqSection"
+      offset: "100"

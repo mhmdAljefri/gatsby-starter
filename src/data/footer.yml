@@ -1,0 +1,137 @@
+file: footer
+en:
+  companyName: ClickApps, Co.
+  companyMobile: '+97 0267 5923'
+  columns:
+    - id: 1
+      title: 'Services'
+      menuItems:
+        - id: 1
+          url: 'https://www.android.com/'
+          text: 'Android'
+          outSide: true
+        - id: 2
+          url: 'https://www.w3.org/standards/'
+          text: 'Design'
+          outSide: true
+        - id: 3
+          url: 'https://rubyonrails.org/'
+          text: 'Ruby on Rails'
+          outSide: true
+        - id: 4
+          url: 'https://www.apple.com/ios/'
+          text: 'iOS'
+          outSide: true
+        - id: 5
+          url: 'https://reactjs.org'
+          text: 'Reactjs'
+          outSide: true
+        - id: 6
+          url: 'https://facebook.github.io/react-native/'
+          text: 'React native'
+          outSide: true
+    - id: 2
+      title: 'Tool'
+      menuItems:
+        - id: 1
+          url: '#1'
+          text: 'Open Source'
+          outSide: true
+        - id: 2
+          url: '#2'
+          text: 'Jisr'
+          outSide: true
+        - id: 3
+          url: '#2'
+          text: 'Bricks'
+          outSide: true
+    - id: 3
+      title: 'Locations'
+      menuItems:
+        - id: 1
+          url: 'https://www.google.com/maps/place/Riyadh+Saudi+Arabia/@24.72539346.26065119z/data=!3m1!4b1!4m5!3m4!1s0x3e2f03890d489399:0xba974d1c98e79fd5!8m2!3d24.7135517!4d46.6752957'
+          text: 'Riyadh SA'
+          outSide: true
+        - id: 2
+          url: 'https://www.google.com/maps/place/clickApps/@14.531808149.123842116.73z/data=!4m5!3m4!1s0x3de8e41eeaaa741b:0xb7b7ebfdbc029f1!8m2!3d14.531945!4d49.125932'
+          text: 'Hadramout YE'
+          outSide: true
+        - id: 3
+          url: 'https://www.google.com/maps/place/Bengaluru+Karnataka+India/@12.954516377.350048410z/data=!4m5!1m2!2m1!1sclickapps+bangalore!3m1!1s0x3bae1670c9b44e6d:0xf8dfc3e8517e4fe0'
+          text: 'Bangalore India'
+          outSide: true
+    - id: 4
+      title: Learn
+      menuItems:
+        - id: 1
+          url: /en/blog/
+          text: Blog
+          outSide: false
+ar:
+  companyName: شركة كليك آبس
+  companyMobile: '+97 0267 5923'
+  columns:
+    - id: 1
+      title: 'الخدمات'
+      menuItems:
+        - id: 1
+          url: 'https://www.android.com/'
+          text: 'الاندرويد'
+          outSide: true
+        - id: 2
+          url: 'https://www.w3.org/standards/'
+          text: 'التصميم'
+          outSide: true
+        - id: 3
+          url: 'https://rubyonrails.org/'
+          text: 'روبي اون ريلس'
+          outSide: true
+        - id: 4
+          url: 'https://www.apple.com/ios/'
+          text: 'آبل اي او اس'
+          outSide: true
+        - id: 5
+          url: 'https://ar.reactjs.org'
+          text: 'رياكت'
+          outSide: true
+        - id: 6
+          url: 'https://facebook.github.io/react-native/'
+          text: 'رياكت نيتف'
+          outSide: true
+    - id: 2
+      title: 'ادوات'
+      menuItems:
+        - id: 1
+          url: '#1'
+          text: 'مفتوحة المصدر'
+          outSide: true
+        - id: 2
+          url: '#2'
+          text: 'جسر لإدارة الموارد البشرية'
+          outSide: true
+        - id: 3
+          url: '#2'
+          text: 'بركس لادارة العقار'
+          outSide: true
+    - id: 3
+      title: 'الفروع'
+      menuItems:
+        - id: 1
+          url: 'https://www.google.com/maps/place/Riyadh+Saudi+Arabia/@24.72539346.26065119z/data=!3m1!4b1!4m5!3m4!1s0x3e2f03890d489399:0xba974d1c98e79fd5!8m2!3d24.7135517!4d46.6752957'
+          text: 'الرياض, السعودية'
+          outSide: true
+        - id: 2
+          url: 'https://www.google.com/maps/place/clickApps/@14.531808149.123842116.73z/data=!4m5!3m4!1s0x3de8e41eeaaa741b:0xb7b7ebfdbc029f1!8m2!3d14.531945!4d49.125932'
+          text: 'حضرموت, الجمهورية اليمنية'
+          outSide: true
+        - id: 3
+          url: 'https://www.google.com/maps/place/Bengaluru+Karnataka+India/@12.954516377.350048410z/data=!4m5!1m2!2m1!1sclickapps+bangalore!3m1!1s0x3bae1670c9b44e6d:0xf8dfc3e8517e4fe0'
+          text: 'بانجلور, الهند'
+          outSide: true
+    - id: 4
+      title: التعليم
+      menuItems:
+        - id: 1
+          url: /ar/blog/
+          text: المدونة
+          outSide: false

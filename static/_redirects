@@ -1,0 +1,3 @@
+# my manually set redirects
+/ /en  301
+/ /ar  301 Language=ar

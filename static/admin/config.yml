@@ -1,0 +1,455 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: static/img
+public_folder: /img
+
+collections:
+  - name: 'blog'
+    label: 'Blog'
+    folder: 'src/data/blog'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - {label: "Is It a Draft", name: "isDraft", widget: "boolean"}
+      - label: 'Title'
+        name: 'title'
+        widget: 'string'
+      - label: 'Template Name'
+        name: 'templateName'
+        widget: 'string'
+        default: 'blogPostTemplate'
+      - label: 'Blog URL Path'
+        name: 'path'
+        widget: 'string'
+        default: '{{year}}-{{slug}}'
+      - label: "Blog Image"
+        name: "image"
+        widget: "image"
+      - label: 'Publish Date'
+        name: 'date'
+        widget: 'datetime'
+      - label: 'Description'
+        name: 'content'
+        widget: 'string'
+      - label: 'Body'
+        name: 'body'
+        widget: 'markdown'
+      - label: Author
+        name: author
+        widget: object
+        fields:
+        - { label: Name , name: name, widget: string }
+        - { label: Avatar, name: avatar, widget: image}
+
+  - name: 'app'
+    label: 'App page'
+    folder: 'src/data/apps'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    filter: {field: "lang", value: "en"}
+    editor:
+      preview: false
+    fields:
+      - {label: "Language", name: "lang", widget: "select", options: ["en", "ar"]}
+      - {label: "Is It a Draft", name: "isDraft", widget: "boolean"}
+      - {label: "Path", name: "path", widget: "string"}
+      - {label: "Template file name", name: "templateName", widget: "hidden", default: "appTemplate"}
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: App Sub Title, name: appSubTitle, widget: string}
+      - {label: App Title, name: appTitle, widget: string}
+      - {label: Title Content, name: titleContent, widget: string}
+      - {label: Sub Title Content, name: subTitleContent, widget: string}
+      - {label: IOS Link, name: iosLink, widget: string}
+      - {label: Android Link, name: androidLink, widget: string}
+      - {label: imageOne, name: imageOne, widget: image}
+      - {label: imageTwo, name: imageTwo, widget: image}
+      - {label: Features Sub Title, name: featuresSubTitle, widget: string}
+      - {label: Features Title, name: featuresTitle, widget: string}
+      - {label: Title, name: title, widget: string}
+      - {label: Description, name: description, widget: string}
+      - {label: Image, name: image, widget: image}
+      - label: Owner
+        name: owner
+        widget: object
+        fields:
+        - { label: Name , name: name, widget: string }
+        - { label: Avatar, name: avatar, widget: image}
+        - {label: Company, name: company, widget: string}
+
+      - label: Features
+        name: features
+        widget: list
+        fields:
+          - {label: Original, name: original, widget: image}
+          - {label: Thumbnail, name: thumbnail, widget: image}
+          - {label: Thumbnail Label, name: thumbnailLabel, widget: string}
+          
+
+  - name: 'works'
+    label: 'Works'
+    folder: 'src/pages/works'
+    create: false
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    filter: {field: "lang", value: "en"}
+    editor:
+      preview: false
+    fields:
+      - {label: "Language", name: "lang", widget: "select", options: ["en", "ar"]}
+      - {label: "Path", name: "path", widget: "string"}
+      - {label: "Template file name", name: "templateName", widget: "hidden", default: "worksTemplate"}
+      - {label: Title Content, name: titleContent, widget: string}
+      - {label: Sub Title Content, name: subTitleContent, widget: string}
+
+
+  - name: "feedback"
+    label: "Feedback Page"
+    folder: "src/pages/feedback"
+    create: true
+    slug: 'index.{{lang}}'
+    filter: {field: "lang", value: "en"}
+    editor:
+      preview: false
+    fields:
+      - {label: "Language", name: "lang", widget: "select", options: ["en", "ar"]}
+      - {label: "Path", name: "path", widget: "string"}
+      - {label: "Template file name", name: "templateName", widget: "hidden", default: "feedbackTemplate"}
+      - {label: Title Content, name: titleContent, widget: string}
+      - {label: Sub Title Content, name: subTitleContent, widget: string}
+
+
+  - name: 'feedbackList'
+    label: 'Feedback List'
+    folder: 'src/data/feedbackList'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    filter: {field: "lang", value: "en"}
+    editor:
+      preview: false
+    identifier_field: slug
+    fields:
+      - {label: "Is It a Draft", name: "isDraft", widget: "boolean"}
+      - {label: "Language", name: "lang", widget: "select", options: ["en", "ar"]}
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: Content, name: content, widget: string}
+      - label: User
+        name: user
+        widget: object
+        fields:
+        - { label: Name , name: name, widget: string }
+        - { label: Avatar, name: avatar, widget: image}
+        - { label: Job Title, name: jobTitle, widget: string }
+
+
+  - name: "index"
+    label: "Home Page"
+    folder: "src/pages/home"
+    create: true
+    slug: 'index.{{lang}}'
+    filter: {field: "lang", value: "en"}
+    editor:
+      preview: false
+    fields:
+      - {label: "Language", name: "lang", widget: "select", options: ["en", "ar"]}
+      - {label: "seoTitle", name: seoTitle, widget: string}
+      - {label: "Path", name: "path", widget: "hidden", default: "/"}
+      - {label: "Template file name", name: "templateName", widget: "hidden", default: "homePageTemplate"}
+      - {label: "Title", name: title, widget: string}
+      - {label: "Intro", name: intro, widget: string}
+      - {label: "Banner Background", name: bannerBG, widget: image}
+      - {label: "Services Title", name: servicesTitle, widget: string}
+      - {label: "Services Sub Title", name: servicesSubTitle, widget: string}
+      - label: Services
+        name: services
+        widget: list
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Description, name: description, widget: string}
+          - {label: Flaticon, name: flaticon, widget: string, default: flaticon-flask}
+
+      - label: About Us Tiltle
+        name: aboutUSTitle
+        widget: string
+        default: Great Responsive & Strong Competitive People
+
+      - label: About Us Content
+        name: aboutUSContent
+        widget: string
+        default: Some hardworking People are Working Day and Night to provide you highly scalable product .
+
+      - label: aboutUSList
+        name: aboutUSList
+        widget: list
+        allow_add: true
+        default: ["Amazing communication experience.",
+        "Best designing experience with trending tools and sizes.",
+        "Training and communication method remotely.",
+        "24/7 Hour onine supports."]
+
+      - {label: aboutUsImageOne, name: aboutUsImageOne, widget: image}
+      - {label: aboutUsImageTwo, name: aboutUsImageTwo, widget: image}
+      - {label: aboutUsImageThree, name: aboutUsImageThree, widget: image}
+
+
+      - label: work History Title
+        name: historyTitle
+        widget: string
+        default: Working With Knowledge, Passion, Heart & Soul
+
+      - label: work History Content
+        name: historyContent
+        widget: string
+        default: We have worked with some leading agencies around the globe and their appreciation is our main strength .
+
+      - label: work History Satistics
+        name: workHistorySatistics
+        widget: list
+        fields:
+          - {label: Title, name: Title, widget: string}
+          - {label: Satistics, name: satistics, widget: string}
+
+      - label: PORTFOLIO
+        name: portfolio
+        widget: string
+        default: PORTFOLIO
+
+      - label: PORTFOLIO SUBTITLE
+        name: portfolioSubTitle
+        widget: string
+        default: Meet our work experience from customers
+
+
+      - label: PORTFOLIO LIST
+        name: portfolioList
+        widget: list
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Link, name: link, widget: string}
+          - {label: date, name: date, widget: date, default: "", format: "MMM Do YY" }
+
+      - {label: qualityImage, name: qualityImage, widget: image}
+      - {label: qualityTitle, name: qualityTitle, widget: string}
+      - {videoUrl: qualitySubTitle, name: qualitySubTitle, widget: string}
+      - label: qualityList
+        name: qualityList
+        widget: list
+        fields:
+          - label: title
+            name: title
+            widget: string
+          - label: description
+            name: description
+            widget: string
+          - label: flaticon
+            name: flaticon
+            widget: string
+
+      - {label: videoTitle, name: videoTitle, widget: string}
+      - {label: videoSubTitle, name: videoSubTitle, widget: string}
+      - {videoUrl: videoSubTitle, name: videoUrl, widget: string}
+      - {label: videoThumb, name: videoThumb, widget: image}
+
+
+ 
+  - name: 'hireUS'
+    label: 'Hire Us'
+    folder: 'src/pages/hire-us'
+    create: true
+    slug: 'index.{{lang}}'
+    filter: {field: "lang", value: "en"}
+    editor:
+      preview: false
+    fields:
+      - {label: "Language", name: "lang", widget: "select", options: ["en", "ar"]}
+      - {label: "Path", name: "path", widget: "string"}
+      - {label: "Template file name", name: "templateName", widget: "hidden", default: "hireUsTemplate"}
+      - {label: "Content Title", name: contentTitle, widget: string}
+      - {label: "Content SubTitle", name: contentSubTitle, widget: string}
+
+      - label: Fields
+        name: fields
+        widget: list
+        fields:
+          - {label: "Company Name", name: companyName, widget: string}
+          - {label: "Name", name: name, widget: string}
+          - {label: "Email Address", name: email, widget: string}
+          - {label: "DO For You", name: doForYou, widget: string}
+          - label: Fields
+            name: fields
+            widget: "select"
+            options:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Text", name: "text", widget: "string"}
+              - {label: "Value", name: "value", widget: "string"}
+
+      - {label: "Submit Button", name: submitButton, widget: string}
+      
+
+
+  - name: "duplicate"
+    label: "Duplicate Data"
+    files:
+      - label: "Header"
+        name: "header"
+        file: "src/data/header.yml"
+        extension: yml
+        fields:
+          - label: menuItems
+            name: menuItems
+            widget: list
+            fields:
+              - label: label
+                name: label
+                widget: string
+              - label: path
+                name: path
+                widget: string
+
+      - label: "Clickapps Team"
+        name: "team"
+        file: "src/data/team.md"
+        extension: yml
+        fields:
+          - {label: "File", name: "file", widget: "hidden", default: "team"}
+          - {label: "Title En", name: "titleEn", widget: "string"}
+          - {label: "subTitle En", name: "subTitleEn", widget: "string"}
+          - {label: "Title Ar", name: "titleAr", widget: "string"}
+          - {label: "subTitle Ar", name: "subTitleAr", widget: "string"}
+          - label: team
+            name: team
+            widget: list
+            fields:
+              - label: name En
+                name: nameEn
+                widget: string
+
+              - label: name Ar
+                name: nameAr
+                widget: string
+
+              - label: designation En
+                name: designationEn
+                widget: string
+
+              - label: designation Ar
+                name: designationAr
+                widget: string
+
+              - label: thumbnail_url
+                name: thumbnail_url
+                widget: image
+              - label: social_links
+                name: social_links
+                widget: list
+                fields:
+                  - label: id
+                    name: id
+                    widget: string
+                  - label: icon
+                    name: icon
+                    widget: string
+                  - label: url
+                    name: url
+                    widget: string
+
+
+      - label: "Social accounts"
+        name: "social_accounts"
+        file: "src/data/social-accounts.yml"
+        extension: yml
+        fields:
+          - label: accounts
+            name: accounts
+            widget: list
+            fields:
+              - label: icon
+                name: icon
+                widget: string
+              - label: link
+                name: link
+                widget: string
+
+      - label: "Footer"
+        name: "footer"
+        file: "src/data/footer.yml"
+        extension: yml
+        fields:
+          - label: columns
+            name: columns
+            widget: list
+            fields:
+              - label: title
+                name: title
+                widget: string
+
+              - label: menuItems
+                name: menuItems
+                widget: list
+                fields:
+                - label: url
+                  name: url
+                  widget: string
+
+                - label: text
+                  name: text
+                  widget: string
+
+
+      - label: "FAQ"
+        name: "faq"
+        file: "src/data/faq.yml"
+        extension: yml
+        fields:
+          - label: en
+            name: en
+            widget: object
+            fields:
+
+              - label: title
+                name: title
+                widget: string
+
+              - label: subTitle
+                name: subTitle
+                widget: string
+            
+              - label: Faqs
+                name: faqs
+                widget: list
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+
+                  - label: Description
+                    name: description
+                    widget: string
+
+          - label: ar
+            name: ar
+            widget: object
+            fields:
+
+              - label: title
+                name: title
+                widget: string
+
+              - label: subTitle
+                name: subTitle
+                widget: string
+            
+              - label: Faqs
+                name: faqs
+                widget: list
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+
+                  - label: Description
+                    name: description
+                    widget: string
